@@ -23,7 +23,7 @@ class BaseVC: UIViewController, UIGestureRecognizerDelegate {
             self.navigationController?.interactivePopGestureRecognizer!.delegate = self
         }
     }
-    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return (self.navigationController?.children.count ?? 0 ) > 1
     }
     

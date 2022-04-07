@@ -70,7 +70,7 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        let userModel:UserModel = UserModel()
+//        let userModel:UserModel = UserModel()
         
         self.alert("xiayibu")
     }
