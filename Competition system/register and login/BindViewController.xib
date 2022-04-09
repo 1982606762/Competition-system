@@ -10,6 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BindViewController" customModule="Competition_system" customModuleProvider="target">
             <connections>
+                <outlet property="ID" destination="ctC-TA-QzF" id="uFA-hA-Mmz"/>
+                <outlet property="name" destination="oW1-de-gUZ" id="vQS-eS-fad"/>
+                <outlet property="picture" destination="0Bp-6a-2Dn" id="GnF-9t-eaG"/>
+                <outlet property="registerBtn" destination="Owq-hU-rOX" id="3RW-Qd-3ij"/>
                 <outlet property="view" destination="1DJ-O3-Rcj" id="GQ4-Oe-o82"/>
             </connections>
         </placeholder>
@@ -57,6 +61,9 @@
                         <constraint firstAttribute="height" constant="45" id="bFI-Co-xIS"/>
                     </constraints>
                     <state key="normal" title="注册"/>
+                    <connections>
+                        <action selector="bind:" destination="-1" eventType="touchUpInside" id="Gnk-7f-jI9"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUb-x4-ANA">
                     <rect key="frame" x="44" y="319.5" width="10" height="24"/>

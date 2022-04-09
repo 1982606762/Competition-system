@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA02E904BE0E8304D74D52B7 /* Pods_Competition_system.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 598B777D9039B29FA1B2277A /* Pods_Competition_system.framework */; };
 		D72157C927FA7E6600B34164 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72157C827FA7E6600B34164 /* BaseVC.swift */; };
 		D72157CB27FA87B700B34164 /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72157CA27FA87B700B34164 /* UIKitExtension.swift */; };
 		D72157CF27FA99F800B34164 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D72157CE27FA99F800B34164 /* Main.storyboard */; };
@@ -15,9 +16,18 @@
 		D743405C27F15671007327ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D743405B27F15671007327ED /* SceneDelegate.swift */; };
 		D743406327F15674007327ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D743406227F15674007327ED /* Assets.xcassets */; };
 		D743406627F15674007327ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D743406427F15674007327ED /* LaunchScreen.storyboard */; };
+		D759A1752800834600237232 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D759A1742800834600237232 /* Tabbar.swift */; };
+		D759A17A2801120800237232 /* CompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D759A1782801120800237232 /* CompetitionViewController.swift */; };
+		D759A17B2801120800237232 /* CompetitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D759A1792801120800237232 /* CompetitionViewController.xib */; };
+		D759A17E2801123500237232 /* SelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D759A17C2801123500237232 /* SelfViewController.swift */; };
+		D759A17F2801123500237232 /* SelfViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D759A17D2801123500237232 /* SelfViewController.xib */; };
+		D759A181280128CB00237232 /* ForumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D759A180280128CB00237232 /* ForumModel.swift */; };
+		D759A1882801653400237232 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D759A1872801653400237232 /* Singleton.swift */; };
+		D759A18B2801673400237232 /* ForumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D759A1892801673400237232 /* ForumTableViewCell.swift */; };
+		D759A18C2801673400237232 /* ForumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D759A18A2801673400237232 /* ForumTableViewCell.xib */; };
+		D759A18F28016B6100237232 /* HeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D759A18D28016B6100237232 /* HeadCell.swift */; };
+		D759A19028016B6100237232 /* HeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D759A18E28016B6100237232 /* HeadCell.xib */; };
 		D76B5E5F27F5C9A800AA7385 /* funcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76B5E5E27F5C9A800AA7385 /* funcs.swift */; };
-		D76B5E6227F5CD9200AA7385 /* Mine.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76B5E6127F5CD9200AA7385 /* Mine.xib */; };
-		D76B5E6427F5CDEE00AA7385 /* minehead.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76B5E6327F5CDEE00AA7385 /* minehead.xib */; };
 		D7EDB61C27FE7EBA0035047C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EDB61A27FE7EBA0035047C /* LoginViewController.swift */; };
 		D7EDB61D27FE7EBA0035047C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7EDB61B27FE7EBA0035047C /* LoginViewController.xib */; };
 		D7EDB62027FE82350035047C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EDB61E27FE82350035047C /* RegisterViewController.swift */; };
@@ -28,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		598B777D9039B29FA1B2277A /* Pods_Competition_system.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Competition_system.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64BA4D57E80B30363883E3C0 /* Pods-Competition system.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Competition system.release.xcconfig"; path = "Target Support Files/Pods-Competition system/Pods-Competition system.release.xcconfig"; sourceTree = "<group>"; };
+		6FBBC4FECA73E53C3800A8BD /* Pods-Competition system.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Competition system.debug.xcconfig"; path = "Target Support Files/Pods-Competition system/Pods-Competition system.debug.xcconfig"; sourceTree = "<group>"; };
 		D72157C827FA7E6600B34164 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		D72157CA27FA87B700B34164 /* UIKitExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtension.swift; sourceTree = "<group>"; };
 		D72157CE27FA99F800B34164 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -38,9 +51,18 @@
 		D743406227F15674007327ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D743406527F15674007327ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D743406727F15674007327ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D759A1742800834600237232 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
+		D759A1782801120800237232 /* CompetitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionViewController.swift; sourceTree = "<group>"; };
+		D759A1792801120800237232 /* CompetitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompetitionViewController.xib; sourceTree = "<group>"; };
+		D759A17C2801123500237232 /* SelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfViewController.swift; sourceTree = "<group>"; };
+		D759A17D2801123500237232 /* SelfViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelfViewController.xib; sourceTree = "<group>"; };
+		D759A180280128CB00237232 /* ForumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumModel.swift; sourceTree = "<group>"; };
+		D759A1872801653400237232 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		D759A1892801673400237232 /* ForumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumTableViewCell.swift; sourceTree = "<group>"; };
+		D759A18A2801673400237232 /* ForumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForumTableViewCell.xib; sourceTree = "<group>"; };
+		D759A18D28016B6100237232 /* HeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadCell.swift; sourceTree = "<group>"; };
+		D759A18E28016B6100237232 /* HeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadCell.xib; sourceTree = "<group>"; };
 		D76B5E5E27F5C9A800AA7385 /* funcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = funcs.swift; sourceTree = "<group>"; };
-		D76B5E6127F5CD9200AA7385 /* Mine.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Mine.xib; sourceTree = "<group>"; };
-		D76B5E6327F5CDEE00AA7385 /* minehead.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = minehead.xib; sourceTree = "<group>"; };
 		D7EDB61A27FE7EBA0035047C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D7EDB61B27FE7EBA0035047C /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		D7EDB61E27FE82350035047C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -55,15 +77,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA02E904BE0E8304D74D52B7 /* Pods_Competition_system.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6542184E46D1A1D787ECA798 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				598B777D9039B29FA1B2277A /* Pods_Competition_system.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D67EBDC40CDA624687124EE4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				6FBBC4FECA73E53C3800A8BD /* Pods-Competition system.debug.xcconfig */,
+				64BA4D57E80B30363883E3C0 /* Pods-Competition system.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -82,6 +115,7 @@
 				D743405827F15671007327ED /* Competition system */,
 				D743405727F15671007327ED /* Products */,
 				D67EBDC40CDA624687124EE4 /* Pods */,
+				6542184E46D1A1D787ECA798 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +130,7 @@
 		D743405827F15671007327ED /* Competition system */ = {
 			isa = PBXGroup;
 			children = (
+				D759A176280083AE00237232 /* competition */,
 				D7EDB62627FE90740035047C /* model */,
 				D7EDB61927FE7E950035047C /* register and login */,
 				D72157C727FA7E4300B34164 /* BaseViewController */,
@@ -104,12 +139,24 @@
 				D743405927F15671007327ED /* AppDelegate.swift */,
 				D743405B27F15671007327ED /* SceneDelegate.swift */,
 				D72157D027FA9B1A00B34164 /* MainViewController.swift */,
+				D759A1742800834600237232 /* Tabbar.swift */,
 				D72157CE27FA99F800B34164 /* Main.storyboard */,
 				D743406227F15674007327ED /* Assets.xcassets */,
 				D743406427F15674007327ED /* LaunchScreen.storyboard */,
 				D743406727F15674007327ED /* Info.plist */,
 			);
 			path = "Competition system";
+			sourceTree = "<group>";
+		};
+		D759A176280083AE00237232 /* competition */ = {
+			isa = PBXGroup;
+			children = (
+				D759A1782801120800237232 /* CompetitionViewController.swift */,
+				D759A1792801120800237232 /* CompetitionViewController.xib */,
+				D759A1892801673400237232 /* ForumTableViewCell.swift */,
+				D759A18A2801673400237232 /* ForumTableViewCell.xib */,
+			);
+			path = competition;
 			sourceTree = "<group>";
 		};
 		D76B5E5727F5C85400AA7385 /* functions */ = {
@@ -124,8 +171,10 @@
 		D76B5E6027F5CD7600AA7385 /* mine */ = {
 			isa = PBXGroup;
 			children = (
-				D76B5E6127F5CD9200AA7385 /* Mine.xib */,
-				D76B5E6327F5CDEE00AA7385 /* minehead.xib */,
+				D759A18D28016B6100237232 /* HeadCell.swift */,
+				D759A18E28016B6100237232 /* HeadCell.xib */,
+				D759A17C2801123500237232 /* SelfViewController.swift */,
+				D759A17D2801123500237232 /* SelfViewController.xib */,
 			);
 			path = mine;
 			sourceTree = "<group>";
@@ -134,9 +183,9 @@
 			isa = PBXGroup;
 			children = (
 				D7EDB61A27FE7EBA0035047C /* LoginViewController.swift */,
+				D7EDB61B27FE7EBA0035047C /* LoginViewController.xib */,
 				D7EDB62227FE86730035047C /* BindViewController.swift */,
 				D7EDB62327FE86730035047C /* BindViewController.xib */,
-				D7EDB61B27FE7EBA0035047C /* LoginViewController.xib */,
 				D7EDB61E27FE82350035047C /* RegisterViewController.swift */,
 				D7EDB61F27FE82350035047C /* RegisterViewController.xib */,
 			);
@@ -147,6 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				D7EDB62727FF01400035047C /* UserModel.swift */,
+				D759A1872801653400237232 /* Singleton.swift */,
+				D759A180280128CB00237232 /* ForumModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -158,9 +209,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D743406A27F15674007327ED /* Build configuration list for PBXNativeTarget "Competition system" */;
 			buildPhases = (
+				6692E88EA72DE9B4C455DF6C /* [CP] Check Pods Manifest.lock */,
 				D743405227F15671007327ED /* Sources */,
 				D743405327F15671007327ED /* Frameworks */,
 				D743405427F15671007327ED /* Resources */,
+				8505F1DF02AA1F8C69602656 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -209,18 +262,62 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D76B5E6427F5CDEE00AA7385 /* minehead.xib in Resources */,
+				D759A18C2801673400237232 /* ForumTableViewCell.xib in Resources */,
+				D759A17F2801123500237232 /* SelfViewController.xib in Resources */,
 				D72157CF27FA99F800B34164 /* Main.storyboard in Resources */,
 				D7EDB62127FE82350035047C /* RegisterViewController.xib in Resources */,
 				D7EDB62527FE86730035047C /* BindViewController.xib in Resources */,
+				D759A17B2801120800237232 /* CompetitionViewController.xib in Resources */,
 				D743406627F15674007327ED /* LaunchScreen.storyboard in Resources */,
+				D759A19028016B6100237232 /* HeadCell.xib in Resources */,
 				D743406327F15674007327ED /* Assets.xcassets in Resources */,
-				D76B5E6227F5CD9200AA7385 /* Mine.xib in Resources */,
 				D7EDB61D27FE7EBA0035047C /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6692E88EA72DE9B4C455DF6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Competition system-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8505F1DF02AA1F8C69602656 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Competition system/Pods-Competition system-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Competition system/Pods-Competition system-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Competition system/Pods-Competition system-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D743405227F15671007327ED /* Sources */ = {
@@ -230,13 +327,20 @@
 				D7EDB62827FF01400035047C /* UserModel.swift in Sources */,
 				D76B5E5F27F5C9A800AA7385 /* funcs.swift in Sources */,
 				D72157D127FA9B1A00B34164 /* MainViewController.swift in Sources */,
+				D759A1752800834600237232 /* Tabbar.swift in Sources */,
+				D759A17A2801120800237232 /* CompetitionViewController.swift in Sources */,
+				D759A17E2801123500237232 /* SelfViewController.swift in Sources */,
 				D72157CB27FA87B700B34164 /* UIKitExtension.swift in Sources */,
 				D7EDB62027FE82350035047C /* RegisterViewController.swift in Sources */,
 				D7EDB62427FE86730035047C /* BindViewController.swift in Sources */,
 				D743405A27F15671007327ED /* AppDelegate.swift in Sources */,
 				D743405C27F15671007327ED /* SceneDelegate.swift in Sources */,
+				D759A181280128CB00237232 /* ForumModel.swift in Sources */,
+				D759A18F28016B6100237232 /* HeadCell.swift in Sources */,
 				D72157C927FA7E6600B34164 /* BaseVC.swift in Sources */,
+				D759A1882801653400237232 /* Singleton.swift in Sources */,
 				D7EDB61C27FE7EBA0035047C /* LoginViewController.swift in Sources */,
+				D759A18B2801673400237232 /* ForumTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +474,7 @@
 		};
 		D743406B27F15674007327ED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FBBC4FECA73E53C3800A8BD /* Pods-Competition system.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -398,6 +503,7 @@
 		};
 		D743406C27F15674007327ED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64BA4D57E80B30363883E3C0 /* Pods-Competition system.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

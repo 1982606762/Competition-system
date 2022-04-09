@@ -70,9 +70,20 @@ class RegisterViewController: UIViewController {
             return
         }
         
-//        let userModel:UserModel = UserModel()
+        let userModel:UserModel = UserModel()
+        if  self.type == 1 {
+            userModel.email = self.userName.text!
+        } else{
+            userModel.phone = self.userName.text!
+        }
+        userModel.password = self.userPassword.text!
+        userModel.id = UUID().uuidString
+        userModel.manage = (self.secretKey.text == "888888")
         
-        self.alert("xiayibu")
+        let vc = BindViewController()
+        vc.userModel = userModel
+        self.navigationController?.pushViewController(vc, animated: true)
+//        self.alert("xiayibu")
     }
     /*
     // MARK: - Navigation

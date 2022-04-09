@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeadCell" rowHeight="206" id="KGk-i7-Jjw" customClass="HeadCell" customModule="Competition_system" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="339" height="206"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="339" height="206"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="Dcy-IF-UmT">
+                        <rect key="frame" x="15" y="8" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="Vbd-yV-me0"/>
+                            <constraint firstAttribute="width" constant="60" id="Wgk-9A-Zgt"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yv8-eh-7fZ">
+                        <rect key="frame" x="85" y="27.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="yv8-eh-7fZ" firstAttribute="centerY" secondItem="Dcy-IF-UmT" secondAttribute="centerY" id="2dP-Xu-Ohd"/>
+                    <constraint firstItem="Dcy-IF-UmT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="EI4-M1-bi2"/>
+                    <constraint firstItem="Dcy-IF-UmT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="V50-rW-5NW"/>
+                    <constraint firstItem="yv8-eh-7fZ" firstAttribute="leading" secondItem="Dcy-IF-UmT" secondAttribute="trailing" constant="10" id="aDT-PG-WjJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="img" destination="Dcy-IF-UmT" id="xET-df-tzN"/>
+                <outlet property="name" destination="yv8-eh-7fZ" id="VXn-Fo-Oqw"/>
+            </connections>
+            <point key="canvasLocation" x="615.21739130434787" y="284.59821428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon" width="1024" height="1024"/>
+    </resources>
+</document>

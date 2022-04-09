@@ -50,6 +50,24 @@ class LoginViewController: BaseVC {
     }
     
     @IBAction func login(_ sender: Any) {
+        self.myTapAction()
+        if self.userName.text!.isEmpty {
+            self.alert( self.type == 1 ? "邮箱不能为空" : "手机号不能为空")
+            return
+        }
+        if self.userPassword.text!.isEmpty {
+            self.alert("密码不能为空")
+            return
+        }
+        
+        let screnDelegate: UIWindowSceneDelegate? = {
+        var uiScreen: UIScene?
+        UIApplication.shared.connectedScenes.forEach { (screen) in
+            uiScreen = screen
+          }
+          return (uiScreen?.delegate as? UIWindowSceneDelegate)
+          }()
+        screnDelegate?.window!?.rootViewController = Tabbar()
     }
     
     @IBAction func register(_ sender: Any) {
