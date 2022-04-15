@@ -32,7 +32,6 @@ class ForumModel:Object{
     @objc dynamic var authorAvatar = ""
     ///评论列表
     var commentList = List<CommentModel>()
-    
 }
 
 class CommentModel: Object {

@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompetitionViewController" customModule="Competition_system" customModuleProvider="target">
             <connections>
-                <outlet property="table" destination="qEl-3r-OPu" id="z48-gy-v84"/>
+                <outlet property="tableView" destination="Ykx-V6-7Ue" id="Qrz-AL-ds8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,10 +19,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qEl-3r-OPu">
-                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="PQ4-Wu-V0o">
                     <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                     <constraints>
@@ -30,16 +26,21 @@
                     </constraints>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ykx-V6-7Ue">
+                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qEl-3r-OPu" secondAttribute="bottom" id="46H-Cy-LRG"/>
-                <constraint firstItem="qEl-3r-OPu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Avu-8E-Icl"/>
-                <constraint firstItem="qEl-3r-OPu" firstAttribute="top" secondItem="PQ4-Wu-V0o" secondAttribute="bottom" id="GCl-lS-tv2"/>
+                <constraint firstItem="Ykx-V6-7Ue" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="1uO-kn-Znh"/>
+                <constraint firstItem="Ykx-V6-7Ue" firstAttribute="top" secondItem="PQ4-Wu-V0o" secondAttribute="bottom" id="4Qt-jk-lQ9"/>
+                <constraint firstItem="Ykx-V6-7Ue" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DtZ-Hg-65e"/>
+                <constraint firstItem="PQ4-Wu-V0o" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="MfQ-GO-iBD"/>
                 <constraint firstItem="PQ4-Wu-V0o" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Mnq-OR-DSl"/>
+                <constraint firstItem="Ykx-V6-7Ue" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NSe-IJ-Sye"/>
                 <constraint firstItem="PQ4-Wu-V0o" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="T6O-NR-ABL"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qEl-3r-OPu" secondAttribute="trailing" id="qG5-Ti-e4f"/>
                 <constraint firstItem="PQ4-Wu-V0o" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="vHi-YV-Woq"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="139.95535714285714"/>
