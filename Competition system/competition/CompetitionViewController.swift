@@ -18,6 +18,7 @@ class CompetitionViewController: BaseVC{
         self.title = "竞赛"
         tableView.register(UINib(nibName: "ForumTableViewCell", bundle: nil), forCellReuseIdentifier: "ForumTableViewCell")
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         weak var weakSelf = self
         addRightTitle("发布") {
             self.alert("发布pressed！")
@@ -106,6 +107,14 @@ extension CompetitionViewController:UITableViewDataSource,UITableViewDelegate{
         (cell as! ForumTableViewCell).parseBTN.tag = ( indexPath.section) * 10000 + indexPath.row
         (cell as! ForumTableViewCell).parseBTN.addTarget(self, action: #selector(parseAction(_:)), for: .touchUpInside)
         return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("clicked!")
+        let vc = ForumDetailViewController()
+        vc.hidesBottomBarWhenPushed = true
+        vc.product =  self.dataArr?[indexPath.section][indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func parseAction (_ sender:UIButton){

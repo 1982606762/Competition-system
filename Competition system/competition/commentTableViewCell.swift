@@ -1,16 +1,14 @@
 //
-//  testTableViewCell.swift
+//  commentTableViewCell.swift
 //  Competition system
 //
-//  Created by XuanLang Z on 2022/4/10.
+//  Created by XuanLang Z on 2022/4/16.
 //
 
 import UIKit
 
-class testTableViewCell: UITableViewCell {
+class commentTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var content: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

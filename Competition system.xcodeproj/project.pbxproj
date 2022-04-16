@@ -12,6 +12,10 @@
 		D72157CB27FA87B700B34164 /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72157CA27FA87B700B34164 /* UIKitExtension.swift */; };
 		D72157CF27FA99F800B34164 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D72157CE27FA99F800B34164 /* Main.storyboard */; };
 		D72157D127FA9B1A00B34164 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72157D027FA9B1A00B34164 /* MainViewController.swift */; };
+		D73D0BF7280A616500E6BEB0 /* ForumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73D0BF5280A616500E6BEB0 /* ForumDetailViewController.swift */; };
+		D73D0BF8280A616500E6BEB0 /* ForumDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D73D0BF6280A616500E6BEB0 /* ForumDetailViewController.xib */; };
+		D73D0BFB280A8FC100E6BEB0 /* commentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73D0BF9280A8FC100E6BEB0 /* commentTableViewCell.swift */; };
+		D73D0BFC280A8FC100E6BEB0 /* commentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D73D0BFA280A8FC100E6BEB0 /* commentTableViewCell.xib */; };
 		D743405A27F15671007327ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D743405927F15671007327ED /* AppDelegate.swift */; };
 		D743405C27F15671007327ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D743405B27F15671007327ED /* SceneDelegate.swift */; };
 		D743406327F15674007327ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D743406227F15674007327ED /* Assets.xcassets */; };
@@ -28,11 +32,6 @@
 		D759A18F28016B6100237232 /* HeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D759A18D28016B6100237232 /* HeadCell.swift */; };
 		D759A19028016B6100237232 /* HeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D759A18E28016B6100237232 /* HeadCell.xib */; };
 		D76B5E5F27F5C9A800AA7385 /* funcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76B5E5E27F5C9A800AA7385 /* funcs.swift */; };
-		D78F4DB02807CFFE00CA4B58 /* testModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78F4DAF2807CFFE00CA4B58 /* testModel.swift */; };
-		D7B6FDA628030B2800620C3A /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B6FDA428030B2800620C3A /* testViewController.swift */; };
-		D7B6FDA728030B2800620C3A /* testViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7B6FDA528030B2800620C3A /* testViewController.xib */; };
-		D7B6FDAA2803137E00620C3A /* testTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B6FDA82803137E00620C3A /* testTableViewCell.swift */; };
-		D7B6FDAB2803137E00620C3A /* testTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7B6FDA92803137E00620C3A /* testTableViewCell.xib */; };
 		D7EDB61C27FE7EBA0035047C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EDB61A27FE7EBA0035047C /* LoginViewController.swift */; };
 		D7EDB61D27FE7EBA0035047C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7EDB61B27FE7EBA0035047C /* LoginViewController.xib */; };
 		D7EDB62027FE82350035047C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EDB61E27FE82350035047C /* RegisterViewController.swift */; };
@@ -50,6 +49,10 @@
 		D72157CA27FA87B700B34164 /* UIKitExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtension.swift; sourceTree = "<group>"; };
 		D72157CE27FA99F800B34164 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D72157D027FA9B1A00B34164 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D73D0BF5280A616500E6BEB0 /* ForumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumDetailViewController.swift; sourceTree = "<group>"; };
+		D73D0BF6280A616500E6BEB0 /* ForumDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForumDetailViewController.xib; sourceTree = "<group>"; };
+		D73D0BF9280A8FC100E6BEB0 /* commentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentTableViewCell.swift; sourceTree = "<group>"; };
+		D73D0BFA280A8FC100E6BEB0 /* commentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = commentTableViewCell.xib; sourceTree = "<group>"; };
 		D743405627F15671007327ED /* Competition system.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Competition system.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D743405927F15671007327ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D743405B27F15671007327ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,11 +71,6 @@
 		D759A18D28016B6100237232 /* HeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadCell.swift; sourceTree = "<group>"; };
 		D759A18E28016B6100237232 /* HeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadCell.xib; sourceTree = "<group>"; };
 		D76B5E5E27F5C9A800AA7385 /* funcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = funcs.swift; sourceTree = "<group>"; };
-		D78F4DAF2807CFFE00CA4B58 /* testModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testModel.swift; sourceTree = "<group>"; };
-		D7B6FDA428030B2800620C3A /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
-		D7B6FDA528030B2800620C3A /* testViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testViewController.xib; sourceTree = "<group>"; };
-		D7B6FDA82803137E00620C3A /* testTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testTableViewCell.swift; sourceTree = "<group>"; };
-		D7B6FDA92803137E00620C3A /* testTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testTableViewCell.xib; sourceTree = "<group>"; };
 		D7EDB61A27FE7EBA0035047C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D7EDB61B27FE7EBA0035047C /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		D7EDB61E27FE82350035047C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -163,12 +161,12 @@
 			children = (
 				D759A1782801120800237232 /* CompetitionViewController.swift */,
 				D759A1792801120800237232 /* CompetitionViewController.xib */,
+				D73D0BF9280A8FC100E6BEB0 /* commentTableViewCell.swift */,
+				D73D0BFA280A8FC100E6BEB0 /* commentTableViewCell.xib */,
+				D73D0BF5280A616500E6BEB0 /* ForumDetailViewController.swift */,
+				D73D0BF6280A616500E6BEB0 /* ForumDetailViewController.xib */,
 				D759A1892801673400237232 /* ForumTableViewCell.swift */,
 				D759A18A2801673400237232 /* ForumTableViewCell.xib */,
-				D7B6FDA428030B2800620C3A /* testViewController.swift */,
-				D7B6FDA528030B2800620C3A /* testViewController.xib */,
-				D7B6FDA82803137E00620C3A /* testTableViewCell.swift */,
-				D7B6FDA92803137E00620C3A /* testTableViewCell.xib */,
 			);
 			path = competition;
 			sourceTree = "<group>";
@@ -210,7 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				D7EDB62727FF01400035047C /* UserModel.swift */,
-				D78F4DAF2807CFFE00CA4B58 /* testModel.swift */,
 				D759A1872801653400237232 /* Singleton.swift */,
 				D759A180280128CB00237232 /* ForumModel.swift */,
 			);
@@ -280,15 +277,15 @@
 				D759A18C2801673400237232 /* ForumTableViewCell.xib in Resources */,
 				D759A17F2801123500237232 /* SelfViewController.xib in Resources */,
 				D72157CF27FA99F800B34164 /* Main.storyboard in Resources */,
+				D73D0BFC280A8FC100E6BEB0 /* commentTableViewCell.xib in Resources */,
 				D7EDB62127FE82350035047C /* RegisterViewController.xib in Resources */,
 				D7EDB62527FE86730035047C /* BindViewController.xib in Resources */,
-				D7B6FDAB2803137E00620C3A /* testTableViewCell.xib in Resources */,
 				D759A17B2801120800237232 /* CompetitionViewController.xib in Resources */,
 				D743406627F15674007327ED /* LaunchScreen.storyboard in Resources */,
 				D759A19028016B6100237232 /* HeadCell.xib in Resources */,
 				D743406327F15674007327ED /* Assets.xcassets in Resources */,
+				D73D0BF8280A616500E6BEB0 /* ForumDetailViewController.xib in Resources */,
 				D7EDB61D27FE7EBA0035047C /* LoginViewController.xib in Resources */,
-				D7B6FDA728030B2800620C3A /* testViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,20 +340,19 @@
 			files = (
 				D7EDB62827FF01400035047C /* UserModel.swift in Sources */,
 				D76B5E5F27F5C9A800AA7385 /* funcs.swift in Sources */,
-				D7B6FDAA2803137E00620C3A /* testTableViewCell.swift in Sources */,
 				D72157D127FA9B1A00B34164 /* MainViewController.swift in Sources */,
 				D759A1752800834600237232 /* Tabbar.swift in Sources */,
 				D759A17A2801120800237232 /* CompetitionViewController.swift in Sources */,
 				D759A17E2801123500237232 /* SelfViewController.swift in Sources */,
 				D72157CB27FA87B700B34164 /* UIKitExtension.swift in Sources */,
+				D73D0BFB280A8FC100E6BEB0 /* commentTableViewCell.swift in Sources */,
 				D7EDB62027FE82350035047C /* RegisterViewController.swift in Sources */,
 				D7EDB62427FE86730035047C /* BindViewController.swift in Sources */,
 				D743405A27F15671007327ED /* AppDelegate.swift in Sources */,
 				D743405C27F15671007327ED /* SceneDelegate.swift in Sources */,
+				D73D0BF7280A616500E6BEB0 /* ForumDetailViewController.swift in Sources */,
 				D759A181280128CB00237232 /* ForumModel.swift in Sources */,
-				D7B6FDA628030B2800620C3A /* testViewController.swift in Sources */,
 				D759A18F28016B6100237232 /* HeadCell.swift in Sources */,
-				D78F4DB02807CFFE00CA4B58 /* testModel.swift in Sources */,
 				D72157C927FA7E6600B34164 /* BaseVC.swift in Sources */,
 				D759A1882801653400237232 /* Singleton.swift in Sources */,
 				D7EDB61C27FE7EBA0035047C /* LoginViewController.swift in Sources */,
