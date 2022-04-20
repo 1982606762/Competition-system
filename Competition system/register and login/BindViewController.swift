@@ -94,20 +94,16 @@ class BindViewController: UIViewController,UIImagePickerControllerDelegate, UINa
         })
     }
     @IBAction func bind(_ sender: Any) {
-        if let userModel = userModel {
-            
-            guard let number = self.ID.text else {
-                self.alert("学号不能为空")
-                return
-            }
-            
-            guard let name = self.name.text else {
-                self.alert("昵称不能为空")
-                return
-            }
-            
-            userModel.name = name
-            userModel.number = number
+        if self.ID.text!.isEmpty{
+            self.alert("学号不能为空")
+        }
+        if self.name.text!.isEmpty{
+            self.alert("昵称不能为空")
+        }else if let userModel = userModel {
+            let name = self.name.text
+            let number = self.ID.text
+            userModel.name = name!
+            userModel.number = number!
         
             if self.haveImg, let image = self.picture.image,let data = image.pngData() {
                 let filename = getDocumentsDirectory().appending("/\(userModel.name)\(userModel.phone)\(userModel.email)userAvatar.png")

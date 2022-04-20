@@ -50,8 +50,8 @@ extension SelfViewController:UITableViewDataSource,UITableViewDelegate,UIImagePi
                 if cell == nil {
                     cell = Bundle.main.loadNibNamed("HeadCell", owner: nil, options:nil)?.first as! HeadCell
                 }
-                (cell as! HeadCell).name.text = Singleton.shared.userModel.name
-                (cell as! HeadCell).img.image = UIImage(contentsOfFile:Singleton.shared.userModel.pic)
+                (cell as! HeadCell).name.text = "userName"
+                (cell as! HeadCell).img.image = UIImage(named: "icon")
                 
                 let tap1 = UITapGestureRecognizer(target: self, action: #selector(avatarAction))
                 (cell as! HeadCell).img.addGestureRecognizer(tap1)
