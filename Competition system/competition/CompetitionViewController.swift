@@ -21,7 +21,9 @@ class CompetitionViewController: BaseVC{
         self.tableView.delegate = self
         weak var weakSelf = self
         addRightTitle("发布") {
-            self.alert("发布pressed！")
+            let vc = ForumPublishViewController()
+            vc.hidesBottomBarWhenPushed = true
+            weakSelf!.navigationController?.pushViewController(vc, animated: true)
         }
         // Do any additional setup after loading the view.
     }
@@ -76,6 +78,20 @@ class CompetitionViewController: BaseVC{
     }
 }
 
+
+extension CompetitionViewController:UISearchBarDelegate{
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.updateUI(self.allData,searchBar.text)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.updateUI(self.allData,searchBar.text)
+        self.view.endEditing(true)
+    }
+}
+
+
 extension CompetitionViewController:UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let arr = self.dataArr?[section] ?? []
@@ -110,7 +126,6 @@ extension CompetitionViewController:UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("clicked!")
         let vc = ForumDetailViewController()
         vc.hidesBottomBarWhenPushed = true
         vc.product =  self.dataArr?[indexPath.section][indexPath.row]
