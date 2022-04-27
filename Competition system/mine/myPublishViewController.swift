@@ -7,7 +7,7 @@
 
 import UIKit
 
-class myPublishViewController: UIViewController {
+class myPublishViewController: BaseVC {
 
     @IBOutlet weak var publishTable: UITableView!
     override func viewDidLoad() {

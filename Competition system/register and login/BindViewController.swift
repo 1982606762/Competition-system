@@ -20,7 +20,6 @@ class BindViewController: UIViewController,UIImagePickerControllerDelegate, UINa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("-----------",userModel)
         self.registerBtn.layer.masksToBounds = true
         self.registerBtn.layer.cornerRadius = 8;
     
@@ -38,7 +37,7 @@ class BindViewController: UIViewController,UIImagePickerControllerDelegate, UINa
     }
     
     @objc func iconAction(){
-       picAction()
+       picSelect()
     }
     
     
@@ -63,7 +62,6 @@ class BindViewController: UIViewController,UIImagePickerControllerDelegate, UINa
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        print(info)
         let image = info[.originalImage] as! UIImage
         self.haveImg = true
         self.picture.image = image

@@ -11,7 +11,6 @@ class LoginViewController: BaseVC {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var userPassword: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
-    
     var _type:Int?
     var type:Int?{
         set{
@@ -41,6 +40,8 @@ class LoginViewController: BaseVC {
     
     
     @IBAction func value(_ sender: UISegmentedControl) {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         self.type = sender.selectedSegmentIndex
         print(self)
     }
@@ -50,15 +51,30 @@ class LoginViewController: BaseVC {
     }
     
     @IBAction func login(_ sender: Any) {
-        self.myTapAction()
-        if self.userName.text!.isEmpty {
-            self.alert( self.type == 1 ? "邮箱不能为空" : "手机号不能为空")
+        let array:[UserModel] = RealmHelper.queryObject(objectClass: UserModel(), filter: nil, "user")
+        
+        if array.count == 0 {
+            self.alert("用户尚未注册,请先注册")
             return
+        }else{
+            let users = array.filter { user in
+                return  self.type == 1 ? (user.email  == self.userName.text) : (user.phone  == self.userName.text)
+            }
+            
+            if users.count == 0{
+                self.alert("用户尚未注册,请先注册")
+                return
+            }else{
+                let u = users[0]
+                if u.password != self.userPassword.text!{
+                    self.alert("密码错误")
+                    return
+                }
+            }
+            Singleton.shared.userModel = users.first!
+            UserDefaults.standard.setValue(Singleton.shared.userModel.id, forKey: "token")
         }
-        if self.userPassword.text!.isEmpty {
-            self.alert("密码不能为空")
-            return
-        }
+        
         
         let screnDelegate: UIWindowSceneDelegate? = {
         var uiScreen: UIScene?
@@ -68,9 +84,12 @@ class LoginViewController: BaseVC {
           return (uiScreen?.delegate as? UIWindowSceneDelegate)
           }()
         screnDelegate?.window!?.rootViewController = Tabbar()
+        self.alert("登录成功")
     }
     
     @IBAction func register(_ sender: Any) {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
         self.navigationController?.pushViewController(RegisterViewController(), animated: true)
     }
     /*

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class myFavourViewController: UIViewController {
+class myFavourViewController: BaseVC {
 
     @IBOutlet weak var favourTable: UITableView!
     override func viewDidLoad() {

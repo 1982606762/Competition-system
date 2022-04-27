@@ -51,13 +51,31 @@ extension SelfViewController:UITableViewDataSource,UITableViewDelegate,UIImagePi
                 if cell == nil {
                     cell = Bundle.main.loadNibNamed("HeadCell", owner: nil, options:nil)?.first as! HeadCell
                 }
-                (cell as! HeadCell).name.text = "userName"
-                (cell as! HeadCell).img.image = UIImage(named: "icon")
+                (cell as! HeadCell).name.text = Singleton.shared.userModel.name + (Singleton.shared.userModel.manage ? "(管理员)" : "")
+                (cell as! HeadCell).img.image = UIImage(contentsOfFile:Singleton.shared.userModel.pic)
                 
                 let tap1 = UITapGestureRecognizer(target: self, action: #selector(avatarAction))
                 (cell as! HeadCell).img.addGestureRecognizer(tap1)
                 cell?.accessoryType = .disclosureIndicator
                 self.imageIV = (cell as! HeadCell).img
+                return cell ?? UITableViewCell()
+            }else if indexPath.row  < 4{
+                var cell = tableView.dequeueReusableCell(withIdentifier: "cell1")
+                if cell == nil {
+                    cell = UITableViewCell(style: .value1, reuseIdentifier: "cell1")
+                }
+                cell?.textLabel?.text = self.dataArr[indexPath.row]
+                if indexPath.row == 1 {
+                    cell?.detailTextLabel?.text = Singleton.shared.userModel.phone
+                    cell?.accessoryType = .disclosureIndicator
+                }else if indexPath.row == 2 {
+                    cell?.detailTextLabel?.text = Singleton.shared.userModel.email
+                    cell?.accessoryType = .disclosureIndicator
+                }else{
+                    cell?.detailTextLabel?.text = Singleton.shared.userModel.number
+                    cell?.accessoryType = .none
+                    cell?.selectionStyle = .none
+                }
                 return cell ?? UITableViewCell()
             }else{
                 var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
@@ -72,7 +90,7 @@ extension SelfViewController:UITableViewDataSource,UITableViewDelegate,UIImagePi
         }
         
         @objc func avatarAction(tap:UITapGestureRecognizer){
-            self.alert("点击了头像")
+            picSelect()
         }
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             if indexPath.row == 0{
@@ -127,6 +145,7 @@ extension SelfViewController:UITableViewDataSource,UITableViewDelegate,UIImagePi
             print(info)
             let image = info[.originalImage] as! UIImage
             self.imageIV!.image = image
+            self.upload()
             picker.dismiss(animated: true, completion: nil)
         }
         
@@ -148,9 +167,23 @@ extension SelfViewController:UITableViewDataSource,UITableViewDelegate,UIImagePi
                     PHImageManager.default().requestImage(for: assets[0], targetSize: PHImageManagerMaximumSize, contentMode: .aspectFit, options: nil) { (image, info) in
                         // Do something with image
                         self.imageIV!.image = image
+                        self.upload()
                     }
                 }
             })
+        }
+        
+        func upload(){
+            
+            if  let image = self.imageIV!.image,let data = image.pngData() {
+                let userModel = Singleton.shared.userModel
+                let filename = getDocumentsDirectory().appending("/\(userModel.name)\(userModel.phone)\(userModel.email)userAvatar.png")
+                let url = NSURL(fileURLWithPath: filename)
+                try? data.write(to: url as URL)
+                RealmHelper.updateBlock({
+                    userModel.pic = filename
+                }, "user",userModel)
+            }
         }
     }
 

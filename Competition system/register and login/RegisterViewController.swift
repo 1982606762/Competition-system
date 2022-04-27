@@ -47,6 +47,8 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func value(_ sender: UISegmentedControl) {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         self.type = sender.selectedSegmentIndex
     }
     
@@ -54,23 +56,46 @@ class RegisterViewController: UIViewController {
     @IBAction func next(_ sender: Any) {
         self.myTapAction()
         if self.userName.text!.isEmpty {
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.warning)
             self.alert( self.type == 1 ? "邮箱不能为空" : "手机号不能为空")
             return
         }
         if self.userPassword.text!.isEmpty {
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.warning)
             self.alert("密码不能为空")
             return
         }
         if self.retypePassword.text!.isEmpty {
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.warning)
             self.alert("再次确认密码不能为空")
             return
         }
         if self.retypePassword.text != self.userPassword.text {
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.warning)
             self.alert("两次输入的密码不一致")
             return
         }
         
         let userModel:UserModel = UserModel()
+        let array:[UserModel] = RealmHelper.queryObject(objectClass: UserModel(), filter: nil, "user")
+        print(array)
+        if array.count > 0 {
+            
+            let users = array.filter { user in
+                return  self.type == 1 ? (user.email  == self.userName.text) : (user.phone  == self.userName.text)
+            }
+            
+            if users.count > 0{
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.warning)
+                self.alert(self.type == 1 ? "邮箱已被注册" : "手机号已被注册")
+                return
+            }
+        }
         if  self.type == 1 {
             userModel.email = self.userName.text!
         } else{
@@ -79,7 +104,8 @@ class RegisterViewController: UIViewController {
         userModel.password = self.userPassword.text!
         userModel.id = UUID().uuidString
         userModel.manage = (self.secretKey.text == "888888")
-        
+        let generator = UIImpactFeedbackGenerator(style: UIImpactFeedbackGenerator.FeedbackStyle.medium)
+        generator.impactOccurred()
         let vc = BindViewController()
         vc.userModel = userModel
         self.navigationController?.pushViewController(vc, animated: true)

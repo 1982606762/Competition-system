@@ -49,6 +49,9 @@
 		D7F3624E28178E4A00586A1D /* myFavourViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F3624C28178E4A00586A1D /* myFavourViewController.xib */; };
 		D7F3625128178E8C00586A1D /* commonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3624F28178E8C00586A1D /* commonTableViewCell.swift */; };
 		D7F3625228178E8C00586A1D /* commonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F3625028178E8C00586A1D /* commonTableViewCell.xib */; };
+		D7F3625C28190E6900586A1D /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3625B28190E6900586A1D /* RealmHelper.swift */; };
+		D7F362A428191B3800586A1D /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F362A228191B3800586A1D /* testViewController.swift */; };
+		D7F362A528191B3800586A1D /* testViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F362A328191B3800586A1D /* testViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +101,9 @@
 		D7F3624C28178E4A00586A1D /* myFavourViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myFavourViewController.xib; sourceTree = "<group>"; };
 		D7F3624F28178E8C00586A1D /* commonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commonTableViewCell.swift; sourceTree = "<group>"; };
 		D7F3625028178E8C00586A1D /* commonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = commonTableViewCell.xib; sourceTree = "<group>"; };
+		D7F3625B28190E6900586A1D /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		D7F362A228191B3800586A1D /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		D7F362A328191B3800586A1D /* testViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +204,7 @@
 			children = (
 				D76B5E5E27F5C9A800AA7385 /* funcs.swift */,
 				D72157CA27FA87B700B34164 /* UIKitExtension.swift */,
+				D7F3625B28190E6900586A1D /* RealmHelper.swift */,
 			);
 			path = functions;
 			sourceTree = "<group>";
@@ -205,10 +212,10 @@
 		D76B5E6027F5CD7600AA7385 /* mine */ = {
 			isa = PBXGroup;
 			children = (
-				D759A18D28016B6100237232 /* HeadCell.swift */,
-				D759A18E28016B6100237232 /* HeadCell.xib */,
 				D759A17C2801123500237232 /* SelfViewController.swift */,
 				D759A17D2801123500237232 /* SelfViewController.xib */,
+				D759A18D28016B6100237232 /* HeadCell.swift */,
+				D759A18E28016B6100237232 /* HeadCell.xib */,
 				D7F3624328178D4900586A1D /* nameViewController.swift */,
 				D7F3624428178D4900586A1D /* nameViewController.xib */,
 				D7F3624728178DD700586A1D /* myPublishViewController.swift */,
@@ -226,6 +233,8 @@
 			children = (
 				D7EDB61A27FE7EBA0035047C /* LoginViewController.swift */,
 				D7EDB61B27FE7EBA0035047C /* LoginViewController.xib */,
+				D7F362A228191B3800586A1D /* testViewController.swift */,
+				D7F362A328191B3800586A1D /* testViewController.xib */,
 				D7EDB61E27FE82350035047C /* RegisterViewController.swift */,
 				D7EDB61F27FE82350035047C /* RegisterViewController.xib */,
 				D7EDB62227FE86730035047C /* BindViewController.swift */,
@@ -314,6 +323,7 @@
 				D7EDB62127FE82350035047C /* RegisterViewController.xib in Resources */,
 				D7EDB62527FE86730035047C /* BindViewController.xib in Resources */,
 				D7F3625228178E8C00586A1D /* commonTableViewCell.xib in Resources */,
+				D7F362A528191B3800586A1D /* testViewController.xib in Resources */,
 				D759A17B2801120800237232 /* CompetitionViewController.xib in Resources */,
 				D743406627F15674007327ED /* LaunchScreen.storyboard in Resources */,
 				D7F3624628178D4900586A1D /* nameViewController.xib in Resources */,
@@ -373,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7F3625C28190E6900586A1D /* RealmHelper.swift in Sources */,
 				D7EDB62827FF01400035047C /* UserModel.swift in Sources */,
 				D76B5E5F27F5C9A800AA7385 /* funcs.swift in Sources */,
 				D72157D127FA9B1A00B34164 /* MainViewController.swift in Sources */,
@@ -382,6 +393,7 @@
 				D759A17E2801123500237232 /* SelfViewController.swift in Sources */,
 				D72157CB27FA87B700B34164 /* UIKitExtension.swift in Sources */,
 				D7F3625128178E8C00586A1D /* commonTableViewCell.swift in Sources */,
+				D7F362A428191B3800586A1D /* testViewController.swift in Sources */,
 				D73D0BFB280A8FC100E6BEB0 /* commentTableViewCell.swift in Sources */,
 				D7EDB62027FE82350035047C /* RegisterViewController.swift in Sources */,
 				D7EDB62427FE86730035047C /* BindViewController.swift in Sources */,
@@ -534,6 +546,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Competition system/Competition system.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3W5B545J98;
@@ -569,6 +582,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Competition system/Competition system.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3W5B545J98;

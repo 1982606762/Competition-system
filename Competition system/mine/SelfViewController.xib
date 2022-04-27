@@ -20,12 +20,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rKU-s8-hzq">
-                    <rect key="frame" x="0.0" y="44" width="414" height="727"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="787"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G74-XI-ve9">
-                    <rect key="frame" x="47.5" y="771" width="319" height="31"/>
-                    <color key="backgroundColor" systemColor="linkColor"/>
+                    <rect key="frame" x="47.5" y="831" width="319" height="31"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="31" id="ZMK-1D-uFZ"/>
                         <constraint firstAttribute="width" constant="319" id="qz0-4a-Vzj"/>
@@ -48,17 +48,17 @@
                 <constraint firstAttribute="trailing" secondItem="rKU-s8-hzq" secondAttribute="trailing" id="RTX-bh-8vt"/>
                 <constraint firstItem="G74-XI-ve9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Rq8-OJ-gTT"/>
                 <constraint firstItem="rKU-s8-hzq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Vqt-5O-yle"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="G74-XI-ve9" secondAttribute="bottom" constant="60" id="itm-CE-mUg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="G74-XI-ve9" secondAttribute="bottom" id="itm-CE-mUg"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="139.95535714285714"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
