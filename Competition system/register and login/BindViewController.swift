@@ -20,7 +20,7 @@ class BindViewController: UIViewController,UIImagePickerControllerDelegate, UINa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(userModel!.name)
+        print("-----------",userModel)
         self.registerBtn.layer.masksToBounds = true
         self.registerBtn.layer.cornerRadius = 8;
     
@@ -111,6 +111,8 @@ class BindViewController: UIViewController,UIImagePickerControllerDelegate, UINa
                 try? data.write(to: url as URL)
                 userModel.pic = filename
             }
+            RealmHelper.addObject(object: userModel, "user")
+
             self.alert(userModel.manage ? "注册管理员成功" : "注册成功",nil) { (success) in
                 self.navigationController?.popToRootViewController(animated: true)
             }

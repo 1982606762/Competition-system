@@ -6,7 +6,9 @@
 //
 //
 import Foundation
-class UserModel {
+import RealmSwift
+
+class UserModel:Object {
     ///昵称
     @objc dynamic var name = ""
     ///密码
@@ -24,7 +26,7 @@ class UserModel {
     ///是否为管理员
     @objc dynamic var manage = false
     /// 收藏的id
-    var collectList = Array<String>()
+    var collectList = List<String>()
     /// 发布的id
-    var publishList = Array<String>()
+    var publishList = List<String>()
 }

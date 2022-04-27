@@ -41,6 +41,14 @@
 		D7EDB62827FF01400035047C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EDB62727FF01400035047C /* UserModel.swift */; };
 		D7F3624128164B0600586A1D /* ForumPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3623F28164B0600586A1D /* ForumPublishViewController.swift */; };
 		D7F3624228164B0600586A1D /* ForumPublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F3624028164B0600586A1D /* ForumPublishViewController.xib */; };
+		D7F3624528178D4900586A1D /* nameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3624328178D4900586A1D /* nameViewController.swift */; };
+		D7F3624628178D4900586A1D /* nameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F3624428178D4900586A1D /* nameViewController.xib */; };
+		D7F3624928178DD700586A1D /* myPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3624728178DD700586A1D /* myPublishViewController.swift */; };
+		D7F3624A28178DD700586A1D /* myPublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F3624828178DD700586A1D /* myPublishViewController.xib */; };
+		D7F3624D28178E4A00586A1D /* myFavourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3624B28178E4A00586A1D /* myFavourViewController.swift */; };
+		D7F3624E28178E4A00586A1D /* myFavourViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F3624C28178E4A00586A1D /* myFavourViewController.xib */; };
+		D7F3625128178E8C00586A1D /* commonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3624F28178E8C00586A1D /* commonTableViewCell.swift */; };
+		D7F3625228178E8C00586A1D /* commonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F3625028178E8C00586A1D /* commonTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +90,14 @@
 		D7EDB62727FF01400035047C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		D7F3623F28164B0600586A1D /* ForumPublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumPublishViewController.swift; sourceTree = "<group>"; };
 		D7F3624028164B0600586A1D /* ForumPublishViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForumPublishViewController.xib; sourceTree = "<group>"; };
+		D7F3624328178D4900586A1D /* nameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nameViewController.swift; sourceTree = "<group>"; };
+		D7F3624428178D4900586A1D /* nameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = nameViewController.xib; sourceTree = "<group>"; };
+		D7F3624728178DD700586A1D /* myPublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPublishViewController.swift; sourceTree = "<group>"; };
+		D7F3624828178DD700586A1D /* myPublishViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myPublishViewController.xib; sourceTree = "<group>"; };
+		D7F3624B28178E4A00586A1D /* myFavourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myFavourViewController.swift; sourceTree = "<group>"; };
+		D7F3624C28178E4A00586A1D /* myFavourViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myFavourViewController.xib; sourceTree = "<group>"; };
+		D7F3624F28178E8C00586A1D /* commonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commonTableViewCell.swift; sourceTree = "<group>"; };
+		D7F3625028178E8C00586A1D /* commonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = commonTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +209,14 @@
 				D759A18E28016B6100237232 /* HeadCell.xib */,
 				D759A17C2801123500237232 /* SelfViewController.swift */,
 				D759A17D2801123500237232 /* SelfViewController.xib */,
+				D7F3624328178D4900586A1D /* nameViewController.swift */,
+				D7F3624428178D4900586A1D /* nameViewController.xib */,
+				D7F3624728178DD700586A1D /* myPublishViewController.swift */,
+				D7F3624828178DD700586A1D /* myPublishViewController.xib */,
+				D7F3624B28178E4A00586A1D /* myFavourViewController.swift */,
+				D7F3624C28178E4A00586A1D /* myFavourViewController.xib */,
+				D7F3624F28178E8C00586A1D /* commonTableViewCell.swift */,
+				D7F3625028178E8C00586A1D /* commonTableViewCell.xib */,
 			);
 			path = mine;
 			sourceTree = "<group>";
@@ -202,10 +226,10 @@
 			children = (
 				D7EDB61A27FE7EBA0035047C /* LoginViewController.swift */,
 				D7EDB61B27FE7EBA0035047C /* LoginViewController.xib */,
-				D7EDB62227FE86730035047C /* BindViewController.swift */,
-				D7EDB62327FE86730035047C /* BindViewController.xib */,
 				D7EDB61E27FE82350035047C /* RegisterViewController.swift */,
 				D7EDB61F27FE82350035047C /* RegisterViewController.xib */,
+				D7EDB62227FE86730035047C /* BindViewController.swift */,
+				D7EDB62327FE86730035047C /* BindViewController.xib */,
 			);
 			path = "register and login";
 			sourceTree = "<group>";
@@ -283,12 +307,16 @@
 				D759A18C2801673400237232 /* ForumTableViewCell.xib in Resources */,
 				D759A17F2801123500237232 /* SelfViewController.xib in Resources */,
 				D72157CF27FA99F800B34164 /* Main.storyboard in Resources */,
+				D7F3624E28178E4A00586A1D /* myFavourViewController.xib in Resources */,
 				D73D0BFC280A8FC100E6BEB0 /* commentTableViewCell.xib in Resources */,
+				D7F3624A28178DD700586A1D /* myPublishViewController.xib in Resources */,
 				D7F3624228164B0600586A1D /* ForumPublishViewController.xib in Resources */,
 				D7EDB62127FE82350035047C /* RegisterViewController.xib in Resources */,
 				D7EDB62527FE86730035047C /* BindViewController.xib in Resources */,
+				D7F3625228178E8C00586A1D /* commonTableViewCell.xib in Resources */,
 				D759A17B2801120800237232 /* CompetitionViewController.xib in Resources */,
 				D743406627F15674007327ED /* LaunchScreen.storyboard in Resources */,
+				D7F3624628178D4900586A1D /* nameViewController.xib in Resources */,
 				D759A19028016B6100237232 /* HeadCell.xib in Resources */,
 				D743406327F15674007327ED /* Assets.xcassets in Resources */,
 				D73D0BF8280A616500E6BEB0 /* ForumDetailViewController.xib in Resources */,
@@ -349,21 +377,25 @@
 				D76B5E5F27F5C9A800AA7385 /* funcs.swift in Sources */,
 				D72157D127FA9B1A00B34164 /* MainViewController.swift in Sources */,
 				D759A1752800834600237232 /* Tabbar.swift in Sources */,
+				D7F3624528178D4900586A1D /* nameViewController.swift in Sources */,
 				D759A17A2801120800237232 /* CompetitionViewController.swift in Sources */,
 				D759A17E2801123500237232 /* SelfViewController.swift in Sources */,
 				D72157CB27FA87B700B34164 /* UIKitExtension.swift in Sources */,
+				D7F3625128178E8C00586A1D /* commonTableViewCell.swift in Sources */,
 				D73D0BFB280A8FC100E6BEB0 /* commentTableViewCell.swift in Sources */,
 				D7EDB62027FE82350035047C /* RegisterViewController.swift in Sources */,
 				D7EDB62427FE86730035047C /* BindViewController.swift in Sources */,
 				D743405A27F15671007327ED /* AppDelegate.swift in Sources */,
 				D743405C27F15671007327ED /* SceneDelegate.swift in Sources */,
 				D7F3624128164B0600586A1D /* ForumPublishViewController.swift in Sources */,
+				D7F3624D28178E4A00586A1D /* myFavourViewController.swift in Sources */,
 				D73D0BF7280A616500E6BEB0 /* ForumDetailViewController.swift in Sources */,
 				D759A181280128CB00237232 /* ForumModel.swift in Sources */,
 				D759A18F28016B6100237232 /* HeadCell.swift in Sources */,
 				D72157C927FA7E6600B34164 /* BaseVC.swift in Sources */,
 				D759A1882801653400237232 /* Singleton.swift in Sources */,
 				D7EDB61C27FE7EBA0035047C /* LoginViewController.swift in Sources */,
+				D7F3624928178DD700586A1D /* myPublishViewController.swift in Sources */,
 				D759A18B2801673400237232 /* ForumTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,11 +539,17 @@
 				DEVELOPMENT_TEAM = 3W5B545J98;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Competition system/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "竞河工";
+				INFOPLIST_KEY_NSCameraUsageDescription = "App需要您的同意,才能访问相机";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "使用照片访问本地相册";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -536,11 +574,17 @@
 				DEVELOPMENT_TEAM = 3W5B545J98;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Competition system/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "竞河工";
+				INFOPLIST_KEY_NSCameraUsageDescription = "App需要您的同意,才能访问相机";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "使用照片访问本地相册";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
