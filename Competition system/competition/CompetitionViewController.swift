@@ -31,20 +31,7 @@ class CompetitionViewController: BaseVC{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("appear")
-        let model = ForumModel()
-        model.content = "content"
-        model.auth = true
-        model.title = "title"
-        model.date = 1649904639.033158
-        let model2 = ForumModel()
-        model2.content = "content"
-        model2.auth = false
-        model2.title = "title"
-        model2.date = 1649904639.033158
-        let array = [model,model2]
-        self.dataArr  = [[],array]
-
+        let array = RealmHelper.queryObject(objectClass: ForumModel(),filter:nil, "forum")
         self.allData = array
         self.updateUI(array,nil)
     }
@@ -133,7 +120,34 @@ extension CompetitionViewController:UITableViewDataSource,UITableViewDelegate{
     }
     
     @objc func parseAction (_ sender:UIButton){
-        self.alert("收藏")
-
+        print(sender.tag)
+        let section = sender.tag / 10000
+        let row = sender.tag % 10000
+        if let model = self.dataArr?[section][row] {
+            let contain = model.collectUserList.contains(Singleton.shared.userModel.id)
+            RealmHelper.updateBlock({
+                if contain {
+                    let indexC = model.collectUserList.firstIndex(of: Singleton.shared.userModel.id)
+                    if let indexC = indexC{
+                        model.collectUserList.remove(at: indexC)
+                    }
+                }else{
+                    model.collectUserList.append(Singleton.shared.userModel.id)
+                }
+            }, "forum", model)
+            
+            
+            RealmHelper.updateBlock({
+                if contain  {
+                    let indexC = Singleton.shared.userModel.collectList.firstIndex(of: model.id)
+                    if let indexC = indexC{
+                        Singleton.shared.userModel.collectList.remove(at: indexC)
+                    }
+                }else{
+                    Singleton.shared.userModel.collectList.append(model.id)
+                }
+            }, "user",  Singleton.shared.userModel)
+            self.tableView.reloadData()
+        }
     }
 }

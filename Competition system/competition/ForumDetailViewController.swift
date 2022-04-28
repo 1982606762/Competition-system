@@ -30,7 +30,10 @@ class ForumDetailViewController: BaseVC {
         
         if (self.product?.authorId == Singleton.shared.userModel.id) || (Singleton.shared.userModel.manage) {
             self.addRightTitle("编辑") {
-                self.alert("编辑pressed!")
+                let vc = ForumPublishViewController()
+                vc.edit = true
+                vc.forumModel = self.product
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
         self.deleteBTN.isHidden = !Singleton.shared.userModel.manage
@@ -44,9 +47,13 @@ class ForumDetailViewController: BaseVC {
     }
 
     @IBAction func deleteForum(_ sender: Any) {
-        self.alert("删除")
-        print(self.product!)
-        
+        if let model = self.product {
+            RealmHelper.updateBlock({
+                model.isDelete = true
+            }, "forum", model)
+            RealmHelper.deleteObject(object: model, "forum")
+        }
+        self.navigationController?.popToRootViewController(animated: true)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -66,11 +73,41 @@ class ForumDetailViewController: BaseVC {
         }
     }
         
-        @objc func parseAction(){
+    @objc func parseAction(){
+        if let model = self.product {
+            var contain = model.collectUserList.contains(Singleton.shared.userModel.id)
+            RealmHelper.updateBlock({
+                if contain {
+                    let indexC = model.collectUserList.firstIndex(of: Singleton.shared.userModel.id)
+                    if let indexC = indexC{
+                        model.collectUserList.remove(at: indexC)
+                    }
+                }else{
+                    model.collectUserList.append(Singleton.shared.userModel.id)
+                }
+            }, "forum", model)
             
-            }
+            
+            RealmHelper.updateBlock({
+                if contain  {
+                    let indexC = Singleton.shared.userModel.collectList.firstIndex(of: model.id)
+                    if let indexC = indexC{
+                        Singleton.shared.userModel.collectList.remove(at: indexC)
+                    }
+                }else{
+                    Singleton.shared.userModel.collectList.append(model.id)
+                }
+            }, "user",  Singleton.shared.userModel)
+            
+            contain = !contain
+            self.parse.image = UIImage(named: contain ? "收藏" : "未收藏")
+        }
+    }
+    
+    
 }
     
+
 
     /*
     // MARK: - Navigation

@@ -115,11 +115,58 @@ class ForumPublishViewController: BaseVC,UIImagePickerControllerDelegate,UINavig
             self.alert("内容不能为空")
             return
         }
-        alert("发布成功", nil) {
-            confirm in weakself!.navigationController?.popViewController(animated: true)
-        }
-        self.clear()
-        
+        if self.edit ,let forumModel = forumModel{
+             RealmHelper.updateBlock({
+                 forumModel.title = weakself!.titleName.text!
+                 forumModel.content = weakself!.content.text!
+                 if let image = self.img.image,let data = image.pngData() {
+                     let filename = getDocumentsDirectory().appending("/forum_\(forumModel.id).png")
+                     let url = NSURL(fileURLWithPath: filename)
+                     try? data.write(to: url as URL)
+                     forumModel.pic = filename
+                 }
+             }, "forum", forumModel)
+             
+             alert("修改成功", nil) { confirm in
+                 weakself!.navigationController?.popViewController(animated: true)
+             }
+
+         }else{
+             let product:ForumModel = ForumModel()
+             product.title = self.titleName.text!
+             product.content = self.content.text!
+             product.authorName = Singleton.shared.userModel.name
+             product.authorAvatar = Singleton.shared.userModel.pic
+             product.authorId = Singleton.shared.userModel.id
+             product.id = UUID().uuidString
+             product.date = Date().timeIntervalSince1970
+             product.auth = Singleton.shared.userModel.manage
+             var image:UIImage?
+             if !self.haveImg {
+                image = UIImage(named: "icon")
+             }else{
+                image = self.img.image
+             }
+             
+             if let image = image,let data = image.pngData() {
+                 let filename = getDocumentsDirectory().appending("/forum_\(product.id).png")
+                 let url = NSURL(fileURLWithPath: filename)
+                 try? data.write(to: url as URL)
+                 product.pic = filename
+             }
+             RealmHelper.addObject(object: product,"forum")
+             
+             
+             RealmHelper.updateBlock({
+                 Singleton.shared.userModel.publishList.append(product.id)
+             }, "user", Singleton.shared.userModel)
+             weak var weakself = self
+              alert("发布成功", nil) {
+                  confirm in
+                  weakself!.navigationController?.popViewController(animated: true)
+              }
+             self.clear()
+         }
     }
     /*
     // MARK: - Navigation
