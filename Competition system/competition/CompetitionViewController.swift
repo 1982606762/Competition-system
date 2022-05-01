@@ -9,6 +9,7 @@ import UIKit
 
 class CompetitionViewController: BaseVC{
     
+    @IBOutlet weak var serach: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     var dataArr:[[ForumModel]]?
     var allData:[ForumModel]?
@@ -19,6 +20,7 @@ class CompetitionViewController: BaseVC{
         tableView.register(UINib(nibName: "ForumTableViewCell", bundle: nil), forCellReuseIdentifier: "ForumTableViewCell")
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.serach.delegate = self
         weak var weakSelf = self
         addRightTitle("发布") {
             let vc = ForumPublishViewController()

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompetitionViewController" customModule="Competition_system" customModuleProvider="target">
             <connections>
+                <outlet property="serach" destination="PQ4-Wu-V0o" id="H4h-Cj-Mci"/>
                 <outlet property="tableView" destination="Ykx-V6-7Ue" id="Qrz-AL-ds8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

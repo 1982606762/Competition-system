@@ -27,7 +27,8 @@ class ForumDetailViewController: BaseVC {
         super.viewDidLoad()
 
         self.title = "竞赛详情"
-        
+        self.comment.delegate = self
+        self.commentTableView.dataSource = self
         if (self.product?.authorId == Singleton.shared.userModel.id) || (Singleton.shared.userModel.manage) {
             self.addRightTitle("编辑") {
                 let vc = ForumPublishViewController()
@@ -37,15 +38,21 @@ class ForumDetailViewController: BaseVC {
             }
         }
         self.deleteBTN.isHidden = !Singleton.shared.userModel.manage
-        self.commentTableView.isScrollEnabled = false
-        self.commentTableView.register(UINib(nibName: "CommonTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "CommonTableViewCell")
+        self.commentTableView.isScrollEnabled = true
+        self.commentTableView.register(UINib(nibName: "commentTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "commentTableViewCell")
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(parseAction))
         self.parse.isUserInteractionEnabled = true
         self.parse.addGestureRecognizer(tap)
+        
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(tapAction))
+        self.view.addGestureRecognizer(tap1)
         // Do any additional setup after loading the view.
     }
 
+    @objc func tapAction(){
+        self.view.endEditing(true)
+    }
     @IBAction func deleteForum(_ sender: Any) {
         if let model = self.product {
             RealmHelper.updateBlock({
@@ -107,7 +114,63 @@ class ForumDetailViewController: BaseVC {
     
 }
     
-
+extension ForumDetailViewController:UITableViewDataSource,UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.text!.isEmpty  {
+            return false
+        }
+        addCommon()
+        return true
+    }
+    
+    func addCommon(){
+        if self.comment.text?.isEmpty == false {
+            let model = CommentModel()
+            model.authorName = Singleton.shared.userModel.name
+            model.authorAvatar = Singleton.shared.userModel.pic
+            model.title = self.comment.text!
+            model.date = Date().timeIntervalSince1970
+            RealmHelper.updateBlock({
+                self.product?.commentList.append(model)
+            }, "forum", self.product!)
+            self.comment.text = ""
+            self.view.endEditing(true)
+            updateUI()
+        }
+    }
+    
+    func updateUI(){
+        self.commentTableView.reloadData()
+        self.commentTableView.layoutIfNeeded()
+        print(self.commentTableView.contentSize.height)
+        self.height.constant = self.commentTableView.contentSize.height + 10
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.product!.commentList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "commentTableViewCell", for: indexPath)
+        (cell as! commentTableViewCell).model = self.product!.commentList[indexPath.row]
+        (cell as! commentTableViewCell).deleteBtn.tag = indexPath.row
+        (cell as! commentTableViewCell).deleteBtn.isHidden = !Singleton.shared.userModel.manage
+        (cell as! commentTableViewCell).deleteBtn.addTarget(self, action: #selector(deleteAction(_:)), for: .touchUpInside)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.product!.commentList.count > 0 ? "评论列表" : "暂无评论"
+    }
+    
+    @objc func deleteAction (_ sender:UIButton){
+        RealmHelper.updateBlock({
+            self.product!.commentList.remove(at: sender.tag)
+            self.updateUI()
+        }, "forum", product)
+    }
+    
+}
 
     /*
     // MARK: - Navigation
