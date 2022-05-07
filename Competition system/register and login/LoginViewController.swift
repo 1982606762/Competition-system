@@ -43,7 +43,8 @@ class LoginViewController: BaseVC {
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         self.type = sender.selectedSegmentIndex
-        print(self)
+        self.userPassword.text = ""
+        self.userName.text = ""
     }
     
     @objc func myTapAction(){

@@ -4,11 +4,10 @@
 //
 //  Created by XuanLang Z on 2022/3/31.
 //
-
-import Foundation
 import UIKit
 import AVFoundation
 
+@_exported import RealmSwift
 let SCREEN_WIDTH = UIScreen.main.bounds.width
 let SCREEN_HEIGHT = UIScreen.main.bounds.height
 
@@ -17,7 +16,7 @@ let margin : CGFloat = 7
 var cellRowCount : Int = 5
 
 extension UIView{
-    
+    //mark 添加某部分圆角
     func addCorner(byRoundingCorners corners: UIRectCorner , cornerRadii: CGFloat){
        let beisize:UIBezierPath = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.size.height), byRoundingCorners: corners, cornerRadii: CGSize(width: cornerRadii, height: cornerRadii))
        let shape:CAShapeLayer = CAShapeLayer()
@@ -72,7 +71,6 @@ extension UIView{
      }
 
 }
-
 
 extension UIColor {
     class func rgbColor(red: Int, green: Int, blue: Int) -> UIColor {
@@ -154,12 +152,70 @@ extension UIViewController{
         self.present(alert, animated: true, completion: nil)
     }
     
+    func isEmail(email:String) -> Bool{
+        if email.count == 0 {
+                    return false
+                }
+                let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+                let emailTest:NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        if emailTest.evaluate(with: email) == true{
+            return true
+        }else{
+            alert("邮箱不合法")
+            return false
+        }
+    }
+    
+    func isPhone(phone:String) -> Bool{
+        if phone.count == 0 {
+            return false
+        }
+        let mobile = "^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$"
+        let regexMobile = NSPredicate(format: "SELF MATCHES %@",mobile)
+        if regexMobile.evaluate(with: phone) == true {
+            return true
+        }else
+        {
+            alert("手机号不合法")
+            return false
+        }
+    }
+    
+    func isPasswordValid(password:String) -> Bool {
+        let passwordRule = "^(?=.*[0-9].*)(?=.*[A-Z].*)(?=.*[a-z].*).{8,}$"
+        let regexPassword = NSPredicate(format: "SELF MATCHES %@",passwordRule)
+        if regexPassword.evaluate(with: password) == true {
+            return true
+        }else
+        {
+            alert("密码需要至少8位且包含数字和大小写字母")
+            return false
+        }
+    }
+    
+    func isID(id:String) ->Bool{
+        let idRule = "^\\d{6}$"
+        let regexID = NSPredicate(format: "SELF MATCHES %@",idRule)
+        if regexID.evaluate(with: id) == true{
+            return true
+        }else
+        {
+            alert("请输入正确的学号")
+            return false
+        }
+    }
+    
+    func generateWarningVibrate() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.warning)
+    }
 }
 
 func getDocumentsDirectory() -> String {
     let paths = NSHomeDirectory().appending("/Documents")
     return paths
 }
+
 
 // MARK: - 字符串截取
 extension String {
@@ -200,6 +256,33 @@ extension String {
     
 }
 
+func timeIntervalChangeToTimeStr(timeInterval:TimeInterval, dateFormat:String?) -> String {
+    let date:NSDate = NSDate.init(timeIntervalSince1970: timeInterval)
+    let formatter = DateFormatter.init()
+    if dateFormat == nil {
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    }else{
+        formatter.dateFormat = dateFormat
+    }
+    return formatter.string(from: date as Date)
+}
+
+//字符串转时间戳
+func timeStrChangeTotimeInterval(timeStr: String?, dateFormat:String?) -> String {
+    if timeStr?.count ?? 0 > 0 {
+        return ""
+    }
+    let format = DateFormatter.init()
+    format.dateStyle = .medium
+    format.timeStyle = .short
+    if dateFormat == nil {
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    }else{
+        format.dateFormat = dateFormat
+    }
+    let date = format.date(from: timeStr!)
+    return String(date!.timeIntervalSince1970)
+}
 
 func updateTimeToCurrennTime(timeStamp: Double) -> String {
       //获取当前的时间戳
@@ -232,4 +315,3 @@ func updateTimeToCurrennTime(timeStamp: Double) -> String {
       dfmatter.dateFormat="yyyy年MM月dd日 HH:mm:ss"
       return dfmatter.string(from: date as Date)
   }
-

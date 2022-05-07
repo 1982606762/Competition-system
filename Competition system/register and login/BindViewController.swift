@@ -94,6 +94,10 @@ class BindViewController: UIViewController,UIImagePickerControllerDelegate, UINa
     @IBAction func bind(_ sender: Any) {
         if self.ID.text!.isEmpty{
             self.alert("学号不能为空")
+        }else{
+            if !self.isID(id: self.ID.text!) {
+                return
+            }
         }
         if self.name.text!.isEmpty{
             self.alert("昵称不能为空")

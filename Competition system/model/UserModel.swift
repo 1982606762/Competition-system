@@ -5,10 +5,10 @@
 //  Created by XuanLang Z on 2022/4/7.
 //
 //
+
 import Foundation
 import RealmSwift
-
-class UserModel:Object {
+class UserModel: Object {
     ///昵称
     @objc dynamic var name = ""
     ///密码

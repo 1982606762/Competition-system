@@ -74,13 +74,13 @@ class ForumDetailViewController: BaseVC {
             self.titleLB.text = model.title
             self.contentLB.text = model.content
             self.date.text = updateTimeToCurrennTime(timeStamp: model.date)
-            self.img.image = UIImage(named: "icon")
+            self.img.image = UIImage(contentsOfFile: model.pic)
             self.parse.image = UIImage(named: (model.collectUserList.contains(Singleton.shared.userModel.id)) ? "收藏" : "未收藏")
-            
         }
     }
         
     @objc func parseAction(){
+        
         if let model = self.product {
             var contain = model.collectUserList.contains(Singleton.shared.userModel.id)
             RealmHelper.updateBlock({

@@ -50,32 +50,48 @@ class RegisterViewController: UIViewController {
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         self.type = sender.selectedSegmentIndex
+        self.userName.text = ""
+        self.userPassword.text = ""
+        self.retypePassword.text = ""
     }
     
     
     @IBAction func next(_ sender: Any) {
         self.myTapAction()
         if self.userName.text!.isEmpty {
-            let generator = UINotificationFeedbackGenerator()
-            generator.notificationOccurred(.warning)
+            self.generateWarningVibrate()
             self.alert( self.type == 1 ? "邮箱不能为空" : "手机号不能为空")
             return
+        }else{
+            if self.type == 1 {
+                if !self.isEmail(email: self.userName.text!) {
+                    self.generateWarningVibrate()
+                    return
+                }
+            }else{
+                if !self.isPhone(phone: self.userName.text!) {
+                    self.generateWarningVibrate()
+                    return
+                }
+            }
         }
         if self.userPassword.text!.isEmpty {
-            let generator = UINotificationFeedbackGenerator()
-            generator.notificationOccurred(.warning)
+            self.generateWarningVibrate()
             self.alert("密码不能为空")
             return
+        }else{
+            if !self.isPasswordValid(password: self.userPassword.text!) {
+                self.generateWarningVibrate()
+                return
+            }
         }
         if self.retypePassword.text!.isEmpty {
-            let generator = UINotificationFeedbackGenerator()
-            generator.notificationOccurred(.warning)
+            self.generateWarningVibrate()
             self.alert("再次确认密码不能为空")
             return
         }
         if self.retypePassword.text != self.userPassword.text {
-            let generator = UINotificationFeedbackGenerator()
-            generator.notificationOccurred(.warning)
+            self.generateWarningVibrate()
             self.alert("两次输入的密码不一致")
             return
         }
@@ -90,8 +106,7 @@ class RegisterViewController: UIViewController {
             }
             
             if users.count > 0{
-                let generator = UINotificationFeedbackGenerator()
-                generator.notificationOccurred(.warning)
+                self.generateWarningVibrate()
                 self.alert(self.type == 1 ? "邮箱已被注册" : "手机号已被注册")
                 return
             }
@@ -103,7 +118,7 @@ class RegisterViewController: UIViewController {
         }
         userModel.password = self.userPassword.text!
         userModel.id = UUID().uuidString
-        userModel.manage = (self.secretKey.text == "888888")
+        userModel.manage = (self.secretKey.text == "hebut2022")
         let generator = UIImpactFeedbackGenerator(style: UIImpactFeedbackGenerator.FeedbackStyle.medium)
         generator.impactOccurred()
         let vc = BindViewController()

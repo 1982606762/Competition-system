@@ -27,7 +27,7 @@ class ForumTableViewCell: UITableViewCell {
                 self.nameLB.text = model.authorName
                 self.detailLB.text = model.title
                 self.dateLB.text = updateTimeToCurrennTime(timeStamp: model.date)
-                self.contenIV.image = UIImage(named: "icon")
+                self.contenIV.image = UIImage(contentsOfFile:model.pic)
                 self.commentBTN.setTitle(String(model.commentList.count), for: .normal)
                 self.parseBTN.setImage(UIImage(named: (model.collectUserList.contains(Singleton.shared.userModel.id)) ? "收藏":"未收藏"), for: .normal)
             }
