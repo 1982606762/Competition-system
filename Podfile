@@ -9,4 +9,5 @@ target 'Competition system' do
   pod "BSImagePicker", "~> 3.1"
   pod 'RealmSwift'
   pod 'IQKeyboardManagerSwift'
+  pod 'AttributedString'
 end

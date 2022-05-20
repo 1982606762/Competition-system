@@ -140,7 +140,7 @@ class ForumPublishViewController: BaseVC,UIImagePickerControllerDelegate,UINavig
              product.authorId = Singleton.shared.userModel.id
              product.id = UUID().uuidString
              product.date = Date().timeIntervalSince1970
-             product.auth = Singleton.shared.userModel.manage
+             product.auth = Singleton.shared.userModel.manage ? 1 : 0
              var image:UIImage?
              if !self.haveImg {
                 image = UIImage(named: "icon")
@@ -161,10 +161,16 @@ class ForumPublishViewController: BaseVC,UIImagePickerControllerDelegate,UINavig
                  Singleton.shared.userModel.publishList.append(product.id)
              }, "user", Singleton.shared.userModel)
              weak var weakself = self
-              alert("发布成功", nil) {
-                  confirm in
-                  weakself!.navigationController?.popViewController(animated: true)
-              }
+             if Singleton.shared.userModel.manage {
+                 alert("发布成功", nil) {
+                      confirm in weakself!.navigationController?.popViewController(animated: true)
+                  }
+             }else{
+                 alert("发布成功,审核通过后将被展示", nil) {
+                      confirm in weakself!.navigationController?.popViewController(animated: true)
+                  }
+             }
+             
              self.clear()
          }
     }

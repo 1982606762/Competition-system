@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,8 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ForumDetailViewController" customModule="Competition_system" customModuleProvider="target">
             <connections>
+                <outlet property="authView" destination="oAf-tT-dDu" id="nI2-aN-uDb"/>
                 <outlet property="comment" destination="3IK-XB-EUz" id="2w1-Cf-X48"/>
+                <outlet property="commentH" destination="lAH-1d-ae5" id="nf0-UO-ego"/>
                 <outlet property="commentTableView" destination="MAB-SD-6Lx" id="mEQ-7b-wXd"/>
+                <outlet property="commentView" destination="Ykz-R0-S1g" id="mYL-q9-qA6"/>
                 <outlet property="contentLB" destination="kCq-6w-fJ4" id="eca-OQ-qpy"/>
                 <outlet property="date" destination="Wtb-dv-iVG" id="VXw-cN-gSH"/>
                 <outlet property="deleteBTN" destination="9td-EB-Ace" id="aok-hD-YC4"/>
@@ -48,22 +52,73 @@
                                 <constraint firstAttribute="height" constant="25" id="hY3-Fa-qoh"/>
                             </constraints>
                         </imageView>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAf-tT-dDu">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1Y-ql-6el">
+                                    <rect key="frame" x="30" y="9" width="55" height="42"/>
+                                    <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="认证">
+                                        <color key="titleColor" systemColor="systemGreenColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="passAction:" destination="-1" eventType="touchUpInside" id="vag-MB-b1m"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39E-VX-Y0k">
+                                    <rect key="frame" x="172" y="9" width="70" height="42"/>
+                                    <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="非认证"/>
+                                    <connections>
+                                        <action selector="rejectAction:" destination="-1" eventType="touchUpInside" id="FBE-NC-EcM"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYB-bi-enN">
+                                    <rect key="frame" x="353" y="15" width="31" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="tintColor" systemColor="systemPinkColor"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="拒绝"/>
+                                    <connections>
+                                        <action selector="deletAction:" destination="-1" eventType="touchUpInside" id="9Cj-Ay-DZV"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="fYB-bi-enN" secondAttribute="trailing" constant="30" id="5a5-b7-HzI"/>
+                                <constraint firstItem="fYB-bi-enN" firstAttribute="centerY" secondItem="oAf-tT-dDu" secondAttribute="centerY" id="Gbq-nd-J4i"/>
+                                <constraint firstItem="V1Y-ql-6el" firstAttribute="leading" secondItem="oAf-tT-dDu" secondAttribute="leading" constant="30" id="KiZ-kD-ISv"/>
+                                <constraint firstItem="39E-VX-Y0k" firstAttribute="centerY" secondItem="oAf-tT-dDu" secondAttribute="centerY" id="LHP-Lx-tbl"/>
+                                <constraint firstItem="V1Y-ql-6el" firstAttribute="centerY" secondItem="oAf-tT-dDu" secondAttribute="centerY" id="Pa0-9a-nyz"/>
+                                <constraint firstAttribute="height" constant="60" id="lAH-1d-ae5"/>
+                                <constraint firstItem="39E-VX-Y0k" firstAttribute="centerX" secondItem="oAf-tT-dDu" secondAttribute="centerX" id="nN4-cI-YZ7"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="oAf-tT-dDu" firstAttribute="leading" secondItem="Ykz-R0-S1g" secondAttribute="leading" id="07c-ON-3NX"/>
+                        <constraint firstAttribute="trailing" secondItem="oAf-tT-dDu" secondAttribute="trailing" id="2K2-r5-jfc"/>
                         <constraint firstAttribute="height" constant="60" id="5Kb-1l-Vq5"/>
                         <constraint firstItem="3IK-XB-EUz" firstAttribute="leading" secondItem="Ykz-R0-S1g" secondAttribute="leading" constant="15" id="Lno-Xy-23s"/>
+                        <constraint firstAttribute="bottom" secondItem="oAf-tT-dDu" secondAttribute="bottom" id="Nen-uP-eU6"/>
                         <constraint firstItem="reo-wv-XMf" firstAttribute="centerY" secondItem="3IK-XB-EUz" secondAttribute="centerY" id="Tb8-T6-V5o"/>
                         <constraint firstItem="3IK-XB-EUz" firstAttribute="centerY" secondItem="Ykz-R0-S1g" secondAttribute="centerY" id="VKf-Ye-sEK"/>
                         <constraint firstAttribute="trailing" secondItem="reo-wv-XMf" secondAttribute="trailing" constant="20" id="cKs-0X-ZeT"/>
+                        <constraint firstItem="oAf-tT-dDu" firstAttribute="top" secondItem="Ykz-R0-S1g" secondAttribute="top" id="iRa-wo-4ZY"/>
                         <constraint firstItem="reo-wv-XMf" firstAttribute="leading" secondItem="3IK-XB-EUz" secondAttribute="trailing" constant="20" id="ntb-Gz-W2Y"/>
+                        <constraint firstAttribute="bottom" secondItem="oAf-tT-dDu" secondAttribute="bottom" id="otM-kG-ZQO"/>
+                        <constraint firstItem="oAf-tT-dDu" firstAttribute="centerX" secondItem="Ykz-R0-S1g" secondAttribute="centerX" id="rcr-9e-LKH"/>
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcV-9k-SrY">
                     <rect key="frame" x="0.0" y="44" width="414" height="758"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uk9-KD-gGG">
-                            <rect key="frame" x="0.0" y="10" width="414" height="416.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="416.5"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SJg-Na-Ehj">
                                     <rect key="frame" x="20" y="10" width="40" height="40"/>
@@ -152,10 +207,10 @@
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="uk9-KD-gGG" firstAttribute="leading" secondItem="TcV-9k-SrY" secondAttribute="leading" id="1UL-E5-0aY"/>
-                        <constraint firstItem="uk9-KD-gGG" firstAttribute="top" secondItem="TcV-9k-SrY" secondAttribute="top" constant="10" id="CBX-aq-iBE"/>
                         <constraint firstAttribute="bottom" secondItem="uk9-KD-gGG" secondAttribute="bottom" id="IWj-ft-BGt"/>
                         <constraint firstItem="uk9-KD-gGG" firstAttribute="centerX" secondItem="TcV-9k-SrY" secondAttribute="centerX" id="XiN-FC-hh4"/>
                         <constraint firstAttribute="trailing" secondItem="uk9-KD-gGG" secondAttribute="trailing" id="faN-mv-DCf"/>
+                        <constraint firstItem="uk9-KD-gGG" firstAttribute="top" secondItem="TcV-9k-SrY" secondAttribute="top" id="oDn-JE-OBQ"/>
                     </constraints>
                 </scrollView>
             </subviews>
@@ -177,6 +232,12 @@
         <image name="未收藏" width="30" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -20,8 +20,8 @@ class ForumModel:Object{
     @objc dynamic var id = ""
     ///收藏者id集合
     var collectUserList = List<String>()
-    ///是否认证
-    @objc dynamic var auth = false
+    ///0待认证 1已认证 2未认证
+    @objc dynamic var auth = 0
     ///被管理员删除
     @objc dynamic var isDelete = false
     ///作者id

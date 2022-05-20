@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         IQKeyboardManager.shared.enable = true
         
         RealmHelper.configRealm("user")
+        RealmHelper.configRealm("news")
         RealmHelper.configRealm("competition")
         // Create the SwiftUI view that provides the window contents.
         // Use a UIHostingController as window root view controller.

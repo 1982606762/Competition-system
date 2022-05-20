@@ -43,7 +43,7 @@ class CompetitionViewController: BaseVC{
         var finisharray:[ForumModel] = []
         if let array = array {
             for s:ForumModel in array {
-                if s.auth {
+                if s.auth == 1 {
                     if let searchStr = searchStr,searchStr.count > 0 {
                         if s.authorName.contains(searchStr) || s.title.contains(searchStr) || s.content.contains(searchStr){
                             ingArray.append(s)
@@ -51,7 +51,7 @@ class CompetitionViewController: BaseVC{
                     }else{
                         ingArray.append(s)
                     }
-                }else{
+                }else if s.auth == 2{
                     if let searchStr = searchStr,searchStr.count > 0 {
                         if s.authorName.contains(searchStr) || s.title.contains(searchStr) || s.content.contains(searchStr){
                             finisharray.append(s)

@@ -10,14 +10,26 @@ import BSImagePicker
 import Photos
 
 class SelfViewController: BaseVC {
-    var dataArr:[String] = ["头像","手机号","邮箱","学号","我的发布","我的收藏"]
+    var dataArr:[String] = []
     var imageIV:UIImageView?
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if Singleton.shared.userModel.manage{
+            self.dataArr = ["头像","手机号","邮箱","学号","我的发布","我的收藏","待审核竞赛","人员管理"]
+        }else{
+            self.dataArr = ["头像","手机号","邮箱","学号","我的发布","我的收藏"]
+        }
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.title = "我的"
+        self.addRightTitle("消息列表") {
+            let vc = NewsViewController()
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         // Do any additional setup after loading the view.
     }
     ///退出
@@ -117,6 +129,16 @@ extension SelfViewController:UITableViewDataSource,UITableViewDelegate,UIImagePi
             }
             else if indexPath.row == 5{
                 let vc = myFavourViewController()
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            else if indexPath.row == 6{
+                let vc = AuditListViewController()
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            else if indexPath.row == 7{
+                let vc = ManagePeopleViewController()
                 vc.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(vc, animated: true)
             }

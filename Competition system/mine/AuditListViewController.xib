@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuditListViewController" customModule="Competition_system" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="RTn-AX-yxm" id="WKe-wx-inY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RTn-AX-yxm">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Yej-go-FGG"/>
+                        <outlet property="delegate" destination="-1" id="QUJ-Xd-gf0"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLX-hX-sdX">
+                    <rect key="frame" x="0.0" y="44" width="414" height="0.0"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="Yu9-pS-9jl"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="VLX-hX-sdX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3FW-zP-RsW"/>
+                <constraint firstItem="RTn-AX-yxm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5ns-MY-4xL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VLX-hX-sdX" secondAttribute="trailing" id="ExN-pY-COf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RTn-AX-yxm" secondAttribute="trailing" id="IvK-dH-sot"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RTn-AX-yxm" secondAttribute="bottom" id="MMK-NP-N8h"/>
+                <constraint firstItem="VLX-hX-sdX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iN4-u2-ODo"/>
+                <constraint firstItem="RTn-AX-yxm" firstAttribute="top" secondItem="VLX-hX-sdX" secondAttribute="bottom" id="vcz-aX-wAO"/>
+            </constraints>
+            <point key="canvasLocation" x="347.82608695652175" y="-19.419642857142858"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

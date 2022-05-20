@@ -52,6 +52,19 @@
 		D7F3625C28190E6900586A1D /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3625B28190E6900586A1D /* RealmHelper.swift */; };
 		D7F362A428191B3800586A1D /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F362A228191B3800586A1D /* testViewController.swift */; };
 		D7F362A528191B3800586A1D /* testViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F362A328191B3800586A1D /* testViewController.xib */; };
+		F37922D42830C11D00F44E29 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37922D22830C11C00F44E29 /* NewsViewController.swift */; };
+		F37922D52830C11D00F44E29 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F37922D32830C11C00F44E29 /* NewsViewController.xib */; };
+		F38043C828334C9500FA08D5 /* NewsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38043C628334C9500FA08D5 /* NewsViewCell.swift */; };
+		F38043C928334C9500FA08D5 /* NewsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F38043C728334C9500FA08D5 /* NewsViewCell.xib */; };
+		F38043CD283371B800FA08D5 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38043CC283371B800FA08D5 /* NewsModel.swift */; };
+		F38043D028337B3A00FA08D5 /* AuditListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38043CE28337B3A00FA08D5 /* AuditListViewController.swift */; };
+		F38043D128337B3A00FA08D5 /* AuditListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F38043CF28337B3A00FA08D5 /* AuditListViewController.xib */; };
+		F38043D42833811000FA08D5 /* ManagePeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38043D22833811000FA08D5 /* ManagePeopleViewController.swift */; };
+		F38043D52833811000FA08D5 /* ManagePeopleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F38043D32833811000FA08D5 /* ManagePeopleViewController.xib */; };
+		F38043D82833819400FA08D5 /* PeopleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38043D62833819400FA08D5 /* PeopleViewCell.swift */; };
+		F38043D92833819400FA08D5 /* PeopleViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F38043D72833819400FA08D5 /* PeopleViewCell.xib */; };
+		F38043DC283382D200FA08D5 /* PeopleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38043DA283382D200FA08D5 /* PeopleDetailViewController.swift */; };
+		F38043DD283382D200FA08D5 /* PeopleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F38043DB283382D200FA08D5 /* PeopleDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +117,19 @@
 		D7F3625B28190E6900586A1D /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		D7F362A228191B3800586A1D /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		D7F362A328191B3800586A1D /* testViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testViewController.xib; sourceTree = "<group>"; };
+		F37922D22830C11C00F44E29 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		F37922D32830C11C00F44E29 /* NewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
+		F38043C628334C9500FA08D5 /* NewsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewCell.swift; sourceTree = "<group>"; };
+		F38043C728334C9500FA08D5 /* NewsViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsViewCell.xib; sourceTree = "<group>"; };
+		F38043CC283371B800FA08D5 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		F38043CE28337B3A00FA08D5 /* AuditListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditListViewController.swift; sourceTree = "<group>"; };
+		F38043CF28337B3A00FA08D5 /* AuditListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuditListViewController.xib; sourceTree = "<group>"; };
+		F38043D22833811000FA08D5 /* ManagePeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePeopleViewController.swift; sourceTree = "<group>"; };
+		F38043D32833811000FA08D5 /* ManagePeopleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManagePeopleViewController.xib; sourceTree = "<group>"; };
+		F38043D62833819400FA08D5 /* PeopleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewCell.swift; sourceTree = "<group>"; };
+		F38043D72833819400FA08D5 /* PeopleViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleViewCell.xib; sourceTree = "<group>"; };
+		F38043DA283382D200FA08D5 /* PeopleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetailViewController.swift; sourceTree = "<group>"; };
+		F38043DB283382D200FA08D5 /* PeopleDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +221,10 @@
 				D7F3624028164B0600586A1D /* ForumPublishViewController.xib */,
 				D759A1892801673400237232 /* ForumTableViewCell.swift */,
 				D759A18A2801673400237232 /* ForumTableViewCell.xib */,
+				F37922D22830C11C00F44E29 /* NewsViewController.swift */,
+				F37922D32830C11C00F44E29 /* NewsViewController.xib */,
+				F38043C628334C9500FA08D5 /* NewsViewCell.swift */,
+				F38043C728334C9500FA08D5 /* NewsViewCell.xib */,
 			);
 			path = competition;
 			sourceTree = "<group>";
@@ -224,6 +254,14 @@
 				D7F3624C28178E4A00586A1D /* myFavourViewController.xib */,
 				D7F3624F28178E8C00586A1D /* commonTableViewCell.swift */,
 				D7F3625028178E8C00586A1D /* commonTableViewCell.xib */,
+				F38043CE28337B3A00FA08D5 /* AuditListViewController.swift */,
+				F38043CF28337B3A00FA08D5 /* AuditListViewController.xib */,
+				F38043D22833811000FA08D5 /* ManagePeopleViewController.swift */,
+				F38043D32833811000FA08D5 /* ManagePeopleViewController.xib */,
+				F38043D62833819400FA08D5 /* PeopleViewCell.swift */,
+				F38043D72833819400FA08D5 /* PeopleViewCell.xib */,
+				F38043DA283382D200FA08D5 /* PeopleDetailViewController.swift */,
+				F38043DB283382D200FA08D5 /* PeopleDetailViewController.xib */,
 			);
 			path = mine;
 			sourceTree = "<group>";
@@ -249,6 +287,7 @@
 				D7EDB62727FF01400035047C /* UserModel.swift */,
 				D759A1872801653400237232 /* Singleton.swift */,
 				D759A180280128CB00237232 /* ForumModel.swift */,
+				F38043CC283371B800FA08D5 /* NewsModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -315,17 +354,23 @@
 			files = (
 				D759A18C2801673400237232 /* ForumTableViewCell.xib in Resources */,
 				D759A17F2801123500237232 /* SelfViewController.xib in Resources */,
+				F38043D128337B3A00FA08D5 /* AuditListViewController.xib in Resources */,
+				F38043C928334C9500FA08D5 /* NewsViewCell.xib in Resources */,
 				D72157CF27FA99F800B34164 /* Main.storyboard in Resources */,
 				D7F3624E28178E4A00586A1D /* myFavourViewController.xib in Resources */,
 				D73D0BFC280A8FC100E6BEB0 /* commentTableViewCell.xib in Resources */,
+				F38043D92833819400FA08D5 /* PeopleViewCell.xib in Resources */,
 				D7F3624A28178DD700586A1D /* myPublishViewController.xib in Resources */,
 				D7F3624228164B0600586A1D /* ForumPublishViewController.xib in Resources */,
 				D7EDB62127FE82350035047C /* RegisterViewController.xib in Resources */,
 				D7EDB62527FE86730035047C /* BindViewController.xib in Resources */,
+				F38043DD283382D200FA08D5 /* PeopleDetailViewController.xib in Resources */,
 				D7F3625228178E8C00586A1D /* commonTableViewCell.xib in Resources */,
 				D7F362A528191B3800586A1D /* testViewController.xib in Resources */,
 				D759A17B2801120800237232 /* CompetitionViewController.xib in Resources */,
+				F38043D52833811000FA08D5 /* ManagePeopleViewController.xib in Resources */,
 				D743406627F15674007327ED /* LaunchScreen.storyboard in Resources */,
+				F37922D52830C11D00F44E29 /* NewsViewController.xib in Resources */,
 				D7F3624628178D4900586A1D /* nameViewController.xib in Resources */,
 				D759A19028016B6100237232 /* HeadCell.xib in Resources */,
 				D743406327F15674007327ED /* Assets.xcassets in Resources */,
@@ -385,16 +430,22 @@
 			files = (
 				D7F3625C28190E6900586A1D /* RealmHelper.swift in Sources */,
 				D7EDB62827FF01400035047C /* UserModel.swift in Sources */,
+				F38043D028337B3A00FA08D5 /* AuditListViewController.swift in Sources */,
 				D76B5E5F27F5C9A800AA7385 /* funcs.swift in Sources */,
 				D72157D127FA9B1A00B34164 /* MainViewController.swift in Sources */,
 				D759A1752800834600237232 /* Tabbar.swift in Sources */,
 				D7F3624528178D4900586A1D /* nameViewController.swift in Sources */,
 				D759A17A2801120800237232 /* CompetitionViewController.swift in Sources */,
 				D759A17E2801123500237232 /* SelfViewController.swift in Sources */,
+				F37922D42830C11D00F44E29 /* NewsViewController.swift in Sources */,
+				F38043DC283382D200FA08D5 /* PeopleDetailViewController.swift in Sources */,
 				D72157CB27FA87B700B34164 /* UIKitExtension.swift in Sources */,
+				F38043C828334C9500FA08D5 /* NewsViewCell.swift in Sources */,
 				D7F3625128178E8C00586A1D /* commonTableViewCell.swift in Sources */,
 				D7F362A428191B3800586A1D /* testViewController.swift in Sources */,
+				F38043D42833811000FA08D5 /* ManagePeopleViewController.swift in Sources */,
 				D73D0BFB280A8FC100E6BEB0 /* commentTableViewCell.swift in Sources */,
+				F38043D82833819400FA08D5 /* PeopleViewCell.swift in Sources */,
 				D7EDB62027FE82350035047C /* RegisterViewController.swift in Sources */,
 				D7EDB62427FE86730035047C /* BindViewController.swift in Sources */,
 				D743405A27F15671007327ED /* AppDelegate.swift in Sources */,
@@ -403,6 +454,7 @@
 				D7F3624D28178E4A00586A1D /* myFavourViewController.swift in Sources */,
 				D73D0BF7280A616500E6BEB0 /* ForumDetailViewController.swift in Sources */,
 				D759A181280128CB00237232 /* ForumModel.swift in Sources */,
+				F38043CD283371B800FA08D5 /* NewsModel.swift in Sources */,
 				D759A18F28016B6100237232 /* HeadCell.swift in Sources */,
 				D72157C927FA7E6600B34164 /* BaseVC.swift in Sources */,
 				D759A1882801653400237232 /* Singleton.swift in Sources */,
@@ -563,6 +615,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -599,6 +652,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import AttributedString
 class ForumDetailViewController: BaseVC {
 
     
@@ -21,15 +21,19 @@ class ForumDetailViewController: BaseVC {
     @IBOutlet weak var titleLB: UILabel!
     @IBOutlet weak var contentLB: UILabel!
     @IBOutlet weak var deleteBTN: UIButton!
+    @IBOutlet weak var commentView: UIView!
+    @IBOutlet weak var commentH: NSLayoutConstraint!
+    @IBOutlet weak var authView: UIView!
     var array:[CommentModel]?
     var product: ForumModel?
+    var audit = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "竞赛详情"
         self.comment.delegate = self
         self.commentTableView.dataSource = self
-        if (self.product?.authorId == Singleton.shared.userModel.id) || (Singleton.shared.userModel.manage) {
+        if (self.product?.authorId == Singleton.shared.userModel.id) || (Singleton.shared.userModel.manage) && (!audit) {
             self.addRightTitle("编辑") {
                 let vc = ForumPublishViewController()
                 vc.edit = true
@@ -47,9 +51,37 @@ class ForumDetailViewController: BaseVC {
         
         let tap1 = UITapGestureRecognizer(target: self, action: #selector(tapAction))
         self.view.addGestureRecognizer(tap1)
+        
+        self.authView.layer.opacity = audit ? 1 : 0
+//        self.commentView.layer.opacity = audit ? 0 : 1
+        self.commentTableView.layer.opacity = audit ? 0 : 1
+        self.deleteBTN.layer.opacity = audit ? 0 : 1
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func deletAction(_ sender: Any) {
+        if let model = self.product {
+            RealmHelper.deleteObject(object: model, "forum")
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
+    @IBAction func rejectAction(_ sender: Any) {
+        if let model = self.product {
+            RealmHelper.updateBlock({
+                model.auth = 2
+            }, "forum", model)
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    @IBAction func passAction(_ sender: Any) {
+        if let model = self.product {
+            RealmHelper.updateBlock({
+                model.auth = 1
+            }, "forum", model)
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+    }
     @objc func tapAction(){
         self.view.endEditing(true)
     }
@@ -72,7 +104,30 @@ class ForumDetailViewController: BaseVC {
                 self.userHead.image = UIImage(contentsOfFile: model.authorAvatar)
             }
             self.titleLB.text = model.title
-            self.contentLB.text = model.content
+//            self.contentLB.addLinkText(text: model.content as NSString)
+//
+            
+            func clicked(_ result: ASAttributedString.Action.Result) {
+                switch result.content {
+                case .string(let value):
+                    var str = value.string
+                    if !str.contains("http"){
+                        str = "https://" + str
+                    }
+                    guard let url = URL(string: str)else{
+                        return
+                    }
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                case .attachment(let value):
+                    print("点击了附件: \n\(value) \nrange: \(result.range)")
+                }
+            }
+            
+            var string: ASAttributedString = .init(string: model.content)
+            string.add(attributes: [.foreground(.blue),.action(clicked)], checkings: [.link])
+            
+            self.contentLB.attributed.text = string
+
             self.date.text = updateTimeToCurrennTime(timeStamp: model.date)
             self.img.image = UIImage(contentsOfFile: model.pic)
             self.parse.image = UIImage(named: (model.collectUserList.contains(Singleton.shared.userModel.id)) ? "收藏" : "未收藏")
@@ -136,10 +191,20 @@ extension ForumDetailViewController:UITableViewDataSource,UITextFieldDelegate{
             self.comment.text = ""
             self.view.endEditing(true)
             updateUI()
+            if model.authorName != self.product?.authorName{
+                let newsModel = NewsModel()
+                newsModel.comment = model.authorName + "评论了你" + "\t" + updateTimeToCurrennTime(timeStamp: model.date)
+                newsModel.modelId = self.product?.id
+                newsModel.authorId = self.product?.authorId
+                newsModel.commentAuthorId = Singleton.shared.userModel.id
+                RealmHelper.addObject(object:newsModel, "news")
+            }
+            
         }
     }
     
     func updateUI(){
+        self.commentTableView.layoutIfNeeded()
         self.commentTableView.reloadData()
         self.commentTableView.layoutIfNeeded()
         print(self.commentTableView.contentSize.height)
